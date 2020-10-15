@@ -39,6 +39,7 @@ $ ./yetanothergameoflife
 ### Start Dialog
 Upon starting: the game asks you to give the size of the desired grid. The game allows you to create a game of minimum 2x2 to maximum 1000x1000.
 Note that the later creates 1 000 000 cells and results in a fairly poor experience (on a Lenevo Thinkpad T420, i5-2520M, 4GB).
+
 ![Alt text](./images/start_dialog.png)
 
 ### Mainwindow
