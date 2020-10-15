@@ -5,18 +5,16 @@ Yet Another Game of Life is an implementation of the Conway's [Game of Life](htt
 This project exists as a learning support for Qt Framework.
 Among the many examples the Qt documentation provides, there is already an implementation of the Game of Life that use Model-View design.
 For the sake of learning, I purposely did my own implementation trying to stay away from what has already been done.
-Note for myself: I was surprised by the use of raw pointers everywhere, turns out all classes
-that descend from QObject have memory handling so, nothing to worry on that side.
 
 ## Desing
 When exploring the Qt documentation, it is stated that the Graphics are designed to be able to display many items.
-I wanted the game to be able to create _large_ game space. So I design the game core around the [GraphicsItem]() class : Cell.
+I wanted the game to be able to create "large" game space. So I design the game core around the [GraphicsItem](https://doc.qt.io/qt-5/qgraphicsitem.html) class : Cell.
 A Cell owns its current and previous state as a boolean. It knows how to draw itself whether it is alive or dead.
-All the cells are owned by a [GraphicsView]() class : View.
+All the cells are owned by a [QGraphicsView](https://doc.qt.io/qt-5/qgraphicsview.html) class : GameView.
 The View's role is to create the cells for the game, display all of them and update the states of the whole grid when called.
-The View is owned by the [MainWindow]() class : Gameoflife. This class owns the View and a [Toolbar]() gathering the controls for the game.
+The View is owned by the [QMainWindow](https://doc.qt.io/qt-5/qmainwindow.html) class : MainWindow. This class owns the GameView and a [Toolbar](https://doc.qt.io/qt-5.9/qtoolbar.html) gathering the controls for the game.
 Toolbar action buttons control the state of the game.
-The code was written in Qtcreator under Ubuntu 18.04.
+The code was written in Qtcreator on Ubuntu 18.04.
 
 ## Dependencies
   * Qt5
@@ -69,6 +67,8 @@ The grid can be explored by scrolling in and out. Each cell of the grid can be t
 
 ## Notes
 Comments were written in the java-doc style, so in practice we can generate a documentation as good as the comments...
+Note for myself: I was surprised by the use of raw pointers everywhere, turns out all classes
+that descend from QObject have memory handling so, nothing to worry on that side.
 
 ## License
 [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
